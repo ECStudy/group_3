@@ -40,10 +40,28 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = GaChiGaJaApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-GaChiGaJaApp-GaChiGaJaAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GaChiGaJaApp-GaChiGaJaAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-GaChiGaJaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaChiGaJaApp.debug.xcconfig"; path = "Target Support Files/Pods-GaChiGaJaApp/Pods-GaChiGaJaApp.debug.xcconfig"; sourceTree = "<group>"; };
-		4772D02CC69630FE1F283BAA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = GaChiGaJaApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4772D02CC69630FE1F283BAA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = GaChiGaJaApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-GaChiGaJaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaChiGaJaApp.release.xcconfig"; path = "Target Support Files/Pods-GaChiGaJaApp/Pods-GaChiGaJaApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-GaChiGaJaApp-GaChiGaJaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaChiGaJaApp-GaChiGaJaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GaChiGaJaApp-GaChiGaJaAppTests/Pods-GaChiGaJaApp-GaChiGaJaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-GaChiGaJaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GaChiGaJaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		651CD8672CC546B2002C97CF /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		651CD8682CC5470F002C97CF /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		651CD8692CC54717002C97CF /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		651CD86A2CC54728002C97CF /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		651CD86D2CC5474D002C97CF /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		651CD86E2CC54753002C97CF /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		651CD86F2CC54757002C97CF /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		651CD8702CC54759002C97CF /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
+		651CD8712CC5475D002C97CF /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		651CD8722CC54760002C97CF /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
+		651CD8732CC54763002C97CF /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		651CD8742CC54768002C97CF /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		651CD8752CC5476A002C97CF /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		651CD8762CC5476E002C97CF /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		651CD8772CC54770002C97CF /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		651CD8782CC54774002C97CF /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		651CD8792CC54777002C97CF /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		651CD87A2CC5477A002C97CF /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GaChiGaJaApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-GaChiGaJaApp-GaChiGaJaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaChiGaJaApp-GaChiGaJaAppTests.release.xcconfig"; path = "Target Support Files/Pods-GaChiGaJaApp-GaChiGaJaAppTests/Pods-GaChiGaJaApp-GaChiGaJaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -97,6 +115,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				4772D02CC69630FE1F283BAA /* PrivacyInfo.xcprivacy */,
+				651CD8662CC545EE002C97CF /* Fonts */,
 			);
 			name = GaChiGaJaApp;
 			sourceTree = "<group>";
@@ -109,6 +128,31 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-GaChiGaJaApp-GaChiGaJaAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		651CD8662CC545EE002C97CF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				651CD8672CC546B2002C97CF /* AntDesign.ttf */,
+				651CD8682CC5470F002C97CF /* Entypo.ttf */,
+				651CD86A2CC54728002C97CF /* Feather.ttf */,
+				651CD8692CC54717002C97CF /* EvilIcons.ttf */,
+				651CD86D2CC5474D002C97CF /* FontAwesome5_Brands.ttf */,
+				651CD86F2CC54757002C97CF /* FontAwesome5_Solid.ttf */,
+				651CD8702CC54759002C97CF /* FontAwesome6_Brands.ttf */,
+				651CD8712CC5475D002C97CF /* FontAwesome6_Regular.ttf */,
+				651CD8732CC54763002C97CF /* Fontisto.ttf */,
+				651CD8742CC54768002C97CF /* Foundation.ttf */,
+				651CD8762CC5476E002C97CF /* MaterialCommunityIcons.ttf */,
+				651CD8792CC54777002C97CF /* SimpleLineIcons.ttf */,
+				651CD86E2CC54753002C97CF /* FontAwesome5_Regular.ttf */,
+				651CD8782CC54774002C97CF /* Octicons.ttf */,
+				651CD87A2CC5477A002C97CF /* Zocial.ttf */,
+				651CD8772CC54770002C97CF /* MaterialIcons.ttf */,
+				651CD8752CC5476A002C97CF /* Ionicons.ttf */,
+				651CD8722CC54760002C97CF /* FontAwesome6_Solid.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -590,10 +634,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -666,10 +707,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
