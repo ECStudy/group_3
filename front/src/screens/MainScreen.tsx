@@ -1,33 +1,30 @@
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useCallback, useState} from 'react';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 import {StackParamList} from '../navigation/StackNavigator';
 import {navigations} from '../constants';
 import {Button, SearchBar} from '@rneui/themed';
 import {ListItem} from '@rneui/themed';
 import {FlatList} from 'react-native-gesture-handler';
+import {room_data, RoomData} from '../sampleData';
 
 type MainScreenProps = StackScreenProps<
   StackParamList,
   typeof navigations.MAIN
 >;
-const list_data = [
-  {title: '하하', sub_title: '이카운트 -> 고덕역'},
-  {title: '재석', sub_title: '이카운트 -> 천호역'},
-  {title: '준하', sub_title: '이카운트 -> 잠실역'},
-  {title: '하하', sub_title: '이카운트 -> 고덕역'},
-  {title: '재석', sub_title: '이카운트 -> 천호역'},
-  {title: '준하', sub_title: '이카운트 -> 잠실역'},
-  {title: '하하', sub_title: '이카운트 -> 고덕역'},
-  {title: '재석', sub_title: '이카운트 -> 천호역'},
-  {title: '준하', sub_title: '이카운트 -> 잠실역'},
-];
 function MainScreen({navigation}: MainScreenProps) {
   const [search_value, setSearchValue] = useState('');
 
-  const updateSearch = (search: string) => {
+  const updateSearch = useCallback((search: string) => {
     setSearchValue(search);
-  };
+  }, []);
+
+  const onPressListItemContent = useCallback(
+    (item: RoomData) => {
+      navigation.navigate('chat', item);
+    },
+    [navigation],
+  );
 
   const onPressCreateRoom = () => {
     // 방만들기 버튼 클릭 시 처리 로직 추가
@@ -36,20 +33,23 @@ function MainScreen({navigation}: MainScreenProps) {
   };
 
   return (
-    <View style={styles.main_container}>
+    <SafeAreaView style={styles.main_container}>
       <SearchBar
-        placeholder="Type Here..."
+        placeholder="지역을 입력해주세요"
         onChangeText={updateSearch}
         value={search_value}
         platform={'android'}
       />
       <View style={styles.contents_container}>
         <FlatList
-          data={list_data}
+          data={room_data}
           renderItem={item => (
             <ListItem>
               <ListItem.Content>
-                <ListItem.Title>{item.item.title}</ListItem.Title>
+                <ListItem.Title
+                  onPress={() => onPressListItemContent(item.item)}>
+                  {item.item.title}
+                </ListItem.Title>
                 <ListItem.Subtitle>{item.item.sub_title}</ListItem.Subtitle>
               </ListItem.Content>
             </ListItem>
@@ -59,12 +59,11 @@ function MainScreen({navigation}: MainScreenProps) {
       <View style={styles.bottom_container}>
         <Button title={'방만들기'} onPress={onPressCreateRoom} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   main_container: {
-    margin: 10,
     flex: 1,
     justifyContent: 'space-between',
   },

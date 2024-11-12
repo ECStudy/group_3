@@ -1,5 +1,5 @@
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {StackParamList} from '../navigation/StackNavigator';
 import {navigations} from '../constants';
@@ -15,16 +15,16 @@ function LoginScreen({navigation}: LoginScreenProps) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = useCallback(() => {
     // 로그인 처리 로직 추가
     console.log('Username:', username);
     console.log('Password:', password);
-  };
+  }, [password, username]);
 
-  const onPressLogin = () => {
+  const onPressLogin = useCallback(() => {
     handleLogin();
     navigation.navigate('main');
-  };
+  }, [handleLogin, navigation]);
 
   const onPressInviteCode = () => {};
 
