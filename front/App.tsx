@@ -1,11 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import StackNavigator from './src/navigation/StackNavigator';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
 import {Persistor, Store} from './src/modules/redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import {enableMapSet, setAutoFreeze} from 'immer';
+import DrawerNavigator from './src/navigation/DrawerNavigator';
 
 // Immer 초기화 설정
 enableMapSet();
@@ -19,7 +19,7 @@ function App(): React.JSX.Element {
       <PersistGate persistor={Persistor}>
         <SafeAreaProvider>
           <NavigationContainer>
-            <StackNavigator />
+            <DrawerNavigator />
           </NavigationContainer>
         </SafeAreaProvider>
       </PersistGate>

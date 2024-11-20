@@ -1,7 +1,5 @@
-import {StackScreenProps} from '@react-navigation/stack';
 import React, {useCallback, useState} from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import {StackParamList} from '../navigation/StackNavigator';
 import {navigations} from '../constants';
 import {Button, SearchBar} from '@rneui/themed';
 import {ListItem} from '@rneui/themed';
@@ -9,9 +7,11 @@ import {FlatList} from 'react-native-gesture-handler';
 import {RoomData} from '../sampleData';
 import {RootState} from '../modules/redux/RootReducer';
 import {useSelector} from 'react-redux';
+import {DrawerScreenProps} from '@react-navigation/drawer';
+import {DrawerParamList} from '../navigation/DrawerNavigator';
 
-type MainScreenProps = StackScreenProps<
-  StackParamList,
+type MainScreenProps = DrawerScreenProps<
+  DrawerParamList,
   typeof navigations.MAIN
 >;
 function MainScreen({navigation}: MainScreenProps) {
@@ -50,12 +50,9 @@ function MainScreen({navigation}: MainScreenProps) {
         <FlatList
           data={room_datas.room_datas}
           renderItem={item => (
-            <ListItem>
+            <ListItem onPress={() => onPressListItemContent(item.item)}>
               <ListItem.Content>
-                <ListItem.Title
-                  onPress={() => onPressListItemContent(item.item)}>
-                  {item.item.title}
-                </ListItem.Title>
+                <ListItem.Title>{item.item.title}</ListItem.Title>
                 <ListItem.Subtitle>{item.item.sub_title}</ListItem.Subtitle>
               </ListItem.Content>
             </ListItem>

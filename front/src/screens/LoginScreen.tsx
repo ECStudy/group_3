@@ -1,15 +1,15 @@
-import {StackScreenProps} from '@react-navigation/stack';
 import React, {useCallback, useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {StackParamList} from '../navigation/StackNavigator';
 import {navigations} from '../constants';
 import {Input, Button} from '@rneui/themed';
 import {useDispatch} from 'react-redux';
 import {setRoomDatas} from '../modules/redux/slice/RoomDatasSlice';
 import {room_data} from '../sampleData';
+import {DrawerScreenProps} from '@react-navigation/drawer';
+import {DrawerParamList} from '../navigation/DrawerNavigator';
 
-type LoginScreenProps = StackScreenProps<
-  StackParamList,
+type LoginScreenProps = DrawerScreenProps<
+  DrawerParamList,
   typeof navigations.LOGIN
 >;
 
@@ -29,7 +29,7 @@ function LoginScreen({navigation}: LoginScreenProps) {
     handleLogin();
     dispatch(setRoomDatas(room_data));
 
-    navigation.navigate('main');
+    navigation.navigate(navigations.MAIN_STACK);
   }, [dispatch, handleLogin, navigation]);
 
   const onPressInviteCode = () => {};

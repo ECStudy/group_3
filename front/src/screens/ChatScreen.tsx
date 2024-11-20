@@ -1,4 +1,3 @@
-import {StackScreenProps} from '@react-navigation/stack';
 import React, {useState} from 'react';
 import {
   View,
@@ -13,15 +12,16 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
-import {StackParamList} from '../navigation/StackNavigator';
 import {navigations} from '../constants';
 import {ChatMessage} from '../sampleData';
 import {setChatData} from '../modules/redux/slice/RoomDatasSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../modules/redux/RootReducer';
+import {DrawerParamList} from '../navigation/DrawerNavigator';
+import {DrawerScreenProps} from '@react-navigation/drawer';
 
-type ChatScreenProps = StackScreenProps<
-  StackParamList,
+type ChatScreenProps = DrawerScreenProps<
+  DrawerParamList,
   typeof navigations.CHAT
 >;
 
@@ -31,7 +31,7 @@ const ChatScreen = ({route}: ChatScreenProps) => {
   const chat_data = useSelector(
     (state: RootState) =>
       state.roomDatas.room_datas.find(
-        room_data => room_data.room_id === route.params.room_id,
+        room_data => room_data.room_id === route.params?.room_id,
       )?.chat_data,
   );
   const sendMessage = () => {

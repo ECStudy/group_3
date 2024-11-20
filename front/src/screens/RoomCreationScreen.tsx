@@ -7,9 +7,6 @@ const RoomCreationScreen = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Page Title */}
-      <Text style={styles.pageTitle}>방 만들기</Text>
-
       {/* Current Location */}
       <View style={styles.section}>
         <Input
