@@ -16,6 +16,9 @@ import {
 import {StackParamList} from '../navigation/StackNavigator';
 import {navigations} from '../constants';
 import {ChatMessage} from '../sampleData';
+import {setChatData} from '../modules/redux/slice/RoomDatasSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '../modules/redux/RootReducer';
 
 type ChatScreenProps = StackScreenProps<
   StackParamList,
@@ -23,8 +26,14 @@ type ChatScreenProps = StackScreenProps<
 >;
 
 const ChatScreen = ({route}: ChatScreenProps) => {
-  const [message, setMessage] = useState<ChatMessage[]>(route.params.chat_data);
   const [inputText, setInputText] = useState<string>('');
+  const dispatch = useDispatch();
+  const chat_data = useSelector(
+    (state: RootState) =>
+      state.roomDatas.room_datas.find(
+        room_data => room_data.room_id === route.params.room_id,
+      )?.chat_data,
+  );
   const sendMessage = () => {
     if (inputText.trim()) {
       const newMessage: ChatMessage = {
@@ -32,7 +41,9 @@ const ChatScreen = ({route}: ChatScreenProps) => {
         text: inputText,
         isSentByUser: true,
       };
-      setMessage([newMessage, ...message]);
+      dispatch(
+        setChatData({room_id: route.params.room_id, chat_data: newMessage}),
+      );
       setInputText('');
     }
   };
@@ -56,10 +67,9 @@ const ChatScreen = ({route}: ChatScreenProps) => {
           keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} // iOS 키보드 높이 보정
         >
           <FlatList
-            data={message}
+            data={chat_data}
             renderItem={renderMessageItem}
             keyExtractor={item => item.id}
-            inverted
           />
           <View style={styles.inputContainer}>
             <TextInput

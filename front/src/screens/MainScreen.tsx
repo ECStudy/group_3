@@ -6,7 +6,9 @@ import {navigations} from '../constants';
 import {Button, SearchBar} from '@rneui/themed';
 import {ListItem} from '@rneui/themed';
 import {FlatList} from 'react-native-gesture-handler';
-import {room_data, RoomData} from '../sampleData';
+import {RoomData} from '../sampleData';
+import {RootState} from '../modules/redux/RootReducer';
+import {useSelector} from 'react-redux';
 
 type MainScreenProps = StackScreenProps<
   StackParamList,
@@ -14,7 +16,11 @@ type MainScreenProps = StackScreenProps<
 >;
 function MainScreen({navigation}: MainScreenProps) {
   const [search_value, setSearchValue] = useState('');
+  const room_datas = useSelector((state: RootState) => state.roomDatas);
 
+  /**
+   * Redux 공간에 사용자 정보를 세팅합니다.
+   */
   const updateSearch = useCallback((search: string) => {
     setSearchValue(search);
   }, []);
@@ -42,7 +48,7 @@ function MainScreen({navigation}: MainScreenProps) {
       />
       <View style={styles.contents_container}>
         <FlatList
-          data={room_data}
+          data={room_datas.room_datas}
           renderItem={item => (
             <ListItem>
               <ListItem.Content>
