@@ -2,9 +2,7 @@ import React, {useCallback, useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {navigations} from '../constants';
 import {Input, Button} from '@rneui/themed';
-import {useDispatch} from 'react-redux';
-import {setRoomDatas} from '../modules/redux/slice/RoomDatasSlice';
-import {room_data} from '../sampleData';
+
 import {DrawerScreenProps} from '@react-navigation/drawer';
 import {DrawerParamList} from '../navigation/DrawerNavigator';
 
@@ -17,7 +15,6 @@ function LoginScreen({navigation}: LoginScreenProps) {
   const [inviteCode, setInviteCode] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
 
   const handleLogin = useCallback(() => {
     // 로그인 처리 로직 추가
@@ -27,10 +24,9 @@ function LoginScreen({navigation}: LoginScreenProps) {
 
   const onPressLogin = useCallback(() => {
     handleLogin();
-    dispatch(setRoomDatas(room_data));
 
     navigation.navigate(navigations.MAIN_STACK);
-  }, [dispatch, handleLogin, navigation]);
+  }, [handleLogin, navigation]);
 
   const onPressInviteCode = () => {};
 

@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import {navigations} from '../constants';
 import {Button, SearchBar} from '@rneui/themed';
@@ -6,9 +6,10 @@ import {ListItem} from '@rneui/themed';
 import {FlatList} from 'react-native-gesture-handler';
 import {RoomData} from '../sampleData';
 import {RootState} from '../modules/redux/RootReducer';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {DrawerScreenProps} from '@react-navigation/drawer';
 import {DrawerParamList} from '../navigation/DrawerNavigator';
+import {setRoomDatas} from '../modules/redux/slice/RoomDatasSlice';
 
 type MainScreenProps = DrawerScreenProps<
   DrawerParamList,
@@ -17,10 +18,25 @@ type MainScreenProps = DrawerScreenProps<
 function MainScreen({navigation}: MainScreenProps) {
   const [search_value, setSearchValue] = useState('');
   const room_datas = useSelector((state: RootState) => state.roomDatas);
+  const dispatch = useDispatch();
 
-  /**
-   * Redux 공간에 사용자 정보를 세팅합니다.
-   */
+  useEffect(() => {
+    // Fetch 요청 보내기
+    fetch('http://localhost:3000/rooms') // NestJS 서버 URL
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data: RoomData[]) => {
+        dispatch(setRoomDatas(data));
+      })
+      .catch(error => {
+        console.error('Error fetching room data:', error);
+      });
+  }, [dispatch]);
+
   const updateSearch = useCallback((search: string) => {
     setSearchValue(search);
   }, []);
