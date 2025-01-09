@@ -1,10 +1,11 @@
 import React, {useCallback, useState} from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View, Alert} from 'react-native';
 import {navigations} from '../constants';
 import {Input, Button} from '@rneui/themed';
 
 import {DrawerScreenProps} from '@react-navigation/drawer';
 import {DrawerParamList} from '../navigation/DrawerNavigator';
+import {login} from '../modules/login/login';
 
 type LoginScreenProps = DrawerScreenProps<
   DrawerParamList,
@@ -16,10 +17,12 @@ function LoginScreen({navigation}: LoginScreenProps) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = useCallback(() => {
-    // 로그인 처리 로직 추가
-    console.log('Username:', username);
-    console.log('Password:', password);
+  const handleLogin = useCallback(async () => {
+    try {
+      await login(username, password);
+    } catch (error) {
+      Alert.alert('Login failed', (error as Error).message);
+    }
   }, [password, username]);
 
   const onPressLogin = useCallback(() => {
